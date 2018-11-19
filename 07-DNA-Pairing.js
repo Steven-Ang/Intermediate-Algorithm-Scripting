@@ -1,25 +1,20 @@
 function pairElement(str) {
-  var results = [];
-  str.split("");
-
-  for (var i = 0; i < str.length; i++) {
-    switch(str[i]) {
+  return str.split("").map(val => {
+    switch(val) {
       case "G":
-        results.push(["G", "C"]);
+        return ["G", "C"];
         break;
       case "C":
-        results.push(["C", "G"]);
+        return ["C", "G"];
         break;
       case "A":
-        results.push(["A", "T"]);
+        return ["A", "T"];
         break;
       case "T":
-        results.push(["T", "A"]);
+        return ["T", "A"];
         break;
     }
-  }
-
-  return results;
+  });
 }
 
-pairElement("GCG");
+pairElement("ATCGA")
