@@ -1,4 +1,5 @@
 // Solution 1
+// Future me: You complicated it.
 function sumAll(arr) {
   var results = [];
   var max = Math.max(arr[0], arr[1]);
@@ -15,13 +16,12 @@ function sumAll(arr) {
 
 // Solution 2
 function sumAll(arr) {
-  // Sort the array by ASC order
-	arr.sort((a, b) => a - b);
-  let sum = 0;
+  let total = 0;
+  arr.sort((a,b) => a - b);
   for (let i = arr[0]; i <= arr[1]; i++) {
-		sum += i;
+    total += i;
   }
-	return sum;
+  return total;
 }
 
 sumAll([1, 4]);
