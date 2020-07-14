@@ -7,4 +7,12 @@ function myReplace(str, before, after) {
   return str.replace(before, after);
 }
 
+// Solution #2
+function myReplace(str, before, after) {
+  let newStr = str.split(' ');
+  let target = newStr.indexOf(before);
+  newStr[target] = (before[0].toUpperCase() === before[0]) ? after[0].toUpperCase() + after.substr(1) : after;
+  return newStr.join(' ');
+}
+
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
