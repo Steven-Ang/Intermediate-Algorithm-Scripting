@@ -1,15 +1,14 @@
 function sumFibs(num) {
-  var seq = [1,1];
-
-  while (seq[seq.length-2] + seq[seq.length-1] <= num) {
-    seq.push(seq[seq.length-2] + seq[seq.length-1]);
+  const seq = [1,1];
+  // seq[seq.length - 1] === Current Value
+  // seq[seq.length - 2] === Previous Value
+  while (seq[seq.length - 2] + seq[seq.length - 1] <= num) {
+    let fibNum = seq[seq.length - 2] + seq[seq.length - 1]
+    console.log(num, fibNum);
+    seq.push(fibNum);
   }
 
-  return seq.filter(function(num) {
-    return num % 2 !== 0;
-  }).reduce(function(a, b) {
-    return a + b;
-  });
+  return seq.filter((num) => (num % 2 !== 0)).reduce((sum, num) => (sum + num));
 }
 
 sumFibs(4);
