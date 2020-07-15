@@ -23,4 +23,21 @@ function convertHTML(str) {
   return str.join("");
 }
 
+// Solution #2
+function convertHTML(str) {
+  const symbols = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;" 
+  };
+  const newStr = str.split('');
+  for (let i = 0; i < str.length; i++) {
+    let target = symbols[str[i]]
+    if (target) newStr[i] = target;
+  }
+  return newStr.join('');
+}
+
 convertHTML('Stuff in "quotation marks"');
