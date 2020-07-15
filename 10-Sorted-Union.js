@@ -10,4 +10,12 @@ function uniteUnique(arr) {
   return args;
 }
 
+// Solution #2
+function uniteUnique(arr) {
+  const args = [...arguments]
+  const result = [];
+  args.forEach((item => (result.push(...item))));
+  return [...new Set(result)];
+}
+
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
